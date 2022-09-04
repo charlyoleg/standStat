@@ -8,6 +8,7 @@ import express from 'express';
 // cli
 const argv = yargs(hideBin(process.argv))
   //.scriptName("standStat")
+  .version('0.2.0')
   .usage("Usage: $0 --port <port> --directoy <directory-path>")
   .example([
     ["$0 -p 2022 -d MyPublic", "run the webserver on port 2022 and serve the content of the folder MyPublic"],
