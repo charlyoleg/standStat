@@ -1,0 +1,29 @@
+{
+  "name": "standstat",
+  "version": "1.0.0",
+  "description": "an easy to distribute static web-server",
+  "type": "module",
+  "main": "static_webserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlyoleg/standStat.git"
+  },
+  "keywords": [
+    "static-content",
+    "standalone"
+  ],
+  "author": "charlyoleg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlyoleg/standStat/issues"
+  },
+  "homepage": "https://github.com/charlyoleg/standStat#readme",
+  "devDependencies": {
+    "esbuild": "^0.15.7",
+    "express": "^4.18.1",
+    "yargs": "^17.5.1"
+  }
+}
