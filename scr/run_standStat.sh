@@ -10,4 +10,5 @@ node -v
 npm -v
 
 cd $(dirname $0)
+pwd
 node standStat.cjs --port 2022 --directory public

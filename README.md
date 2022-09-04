@@ -46,6 +46,8 @@ In other words, this small application is an alternative to [nginx](http://hg.ng
 
 *standStat* is thought for running local application. If you want an efficient server that supports thousands of connections, *nginx* or *apache-httpd* are better choices.
 
+If you want to run a *static webserver* while using *npm*, you will be better with [http-server](https://github.com/http-party/http-server) or [serve](https://github.com/vercel/serve).
+
 
 Concept
 -------
