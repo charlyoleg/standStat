@@ -5,7 +5,11 @@
   "type": "module",
   "main": "static_webserver.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node ./static_webserver.js --port 2022 --directory tests/public",
+    "test": "sh ./tests/test_standStat.sh",
+    "build": "esbuild static_webserver.js --bundle --platform=node --outfile=dist/standStat.cjs",
+    "run_dist": "node dist/standStat.cjs --port 2022 --directory tests/public",
+    "clean": "rm -fr tests/tmp dist"
   },
   "repository": {
     "type": "git",
