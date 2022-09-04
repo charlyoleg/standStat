@@ -28,11 +28,11 @@ cp -a ../standStat/tests/public ./
 cp ../standStat/dist/standStat.cjs ./
 cp ../standStat/scr/run_standStat.sh ./
 cp ../standStat/scr/run_standStat.cmd ./
-# test that you pure frontend app is working
+# test that your pure frontend app is working
 run_standStat.sh
 # stop the server standStat with ctrl-c
 cd ..
-zip myApp
+zip -r myApp.zip myApp
 ls -l myApp.zip
 # you can distribute your frontend app as a zip!
 ```
