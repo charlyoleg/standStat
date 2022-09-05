@@ -6,12 +6,12 @@ jobs:
   standStat-builder:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "test abc"
-      - run: echo "info : event_name : ${github.event_name}"
-      - run: echo "info : runner.os  : ${runner.os}"
-      - run: echo "info : branch ref : ${github.ref}"
-      - run: echo "info : repository : ${github.repository}"
-      - run: echo "info : status     : ${job.status}"
+      - run: echo 'test abc'
+      - run: echo 'info : event_name : ${{ github.event_name }}'
+      - run: echo 'info : runner.os  : ${{ runner.os }}'
+      - run: echo 'info : branch ref : ${{ github.ref }}'
+      - run: echo 'info : repository : ${{ github.repository }}'
+      - run: echo 'info : status     : ${{ job.status }}'
       - run: ls ${{ github.workspace }}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -32,5 +32,5 @@ jobs:
         with:
           name: example1_v1.zip
           path: tmp/example1.zip
-      - run: echo "info : status     : ${job.status}"
+      - run: echo 'info : status     : ${{ job.status }}'
 
