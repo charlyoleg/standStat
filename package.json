@@ -9,6 +9,7 @@
     "test": "sh ./tests/test_standStat.sh",
     "build": "esbuild static_webserver.js --bundle --platform=node --outfile=dist/standStat.cjs",
     "run_dist": "node dist/standStat.cjs --port 2022 --directory tests/public",
+    "create_zip_example": "./create_zip_example.sh",
     "clean": "rm -fr dist tests/tmp tmp"
   },
   "repository": {

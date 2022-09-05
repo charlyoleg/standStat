@@ -6,6 +6,7 @@ jobs:
   standStat-builder:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "test abc"
       - run: echo "info : event_name : ${{ github.event_name }}"
       - run: echo "info : runner.os  : ${{ runner.os }}"
       - run: echo "info : branch ref : ${{ github.ref }}"
@@ -24,5 +25,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: standStat.cjs
-          path: dist:standStat.cjs
+          path: dist/standStat.cjs
+      - run: npm run create_zip_example
+      - name: Archive the example1.zip
+        uses: actions/upload-artifact@v3
+        with:
+          name: example1_v1.zip
+          path: tmp/example1.zip
       - run: echo "info : status     : ${{ job.status }}"
