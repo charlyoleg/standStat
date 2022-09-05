@@ -6,8 +6,6 @@ jobs:
   standStat-builder:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "test abc"
-      - run: echo "The job was automatically triggered by a ${{ github.event_name }} eve"
       - run: echo "info - event_name - ${{ github.event_name }}"
       - run: echo "info - runner.os  - ${{ runner.os }}"
       - run: echo "info - branch ref - ${{ github.ref }}"
