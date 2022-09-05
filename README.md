@@ -26,10 +26,12 @@ mkdir myApp
 cd myApp
 cp -a ../standStat/tests/public ./
 cp ../standStat/dist/standStat.cjs ./
-cp ../standStat/scr/run_standStat.sh ./
-cp ../standStat/scr/run_standStat.cmd ./
+cp ../standStat/scr/linux_runs_standStat.sh ./
+cp ../standStat/scr/windows_runs_standStat.cmd ./
+# adapt the starter scripts to your wished port-number and content-folder
+vim linux_runs_standStat.sh windows_runs_standStat.cmd
 # test that your pure frontend app is working
-run_standStat.sh
+linux_runs_standStat.sh
 # stop the server standStat with ctrl-c
 cd ..
 zip -r myApp.zip myApp

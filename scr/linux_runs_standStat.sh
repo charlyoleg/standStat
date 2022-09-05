@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# run_standStat.sh
+# linux_runs_standStat.sh
 
 set -e
 set -x

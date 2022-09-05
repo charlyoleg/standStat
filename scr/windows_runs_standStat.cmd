@@ -1,9 +1,9 @@
 @ECHO OFF
 
-:: run_standStat.cmd
+:: windows_runs_standStat.cmd
 :: It launchs standStat.cjs
 
-ECHO Hello from run_standStat.cmd
+ECHO Hello from windows_runs_standStat.cmd
 
 
 systeminfo
