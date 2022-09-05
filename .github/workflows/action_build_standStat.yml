@@ -1,0 +1,28 @@
+# action_build_standStat.yml
+
+name: Github Actions Building standStat
+on: [push]
+jobs:
+  standStat-builder:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "info : event_name : ${{ github.event_name }}"
+      - run: echo "info : runner.os  : ${{ runner.os }}"
+      - run: echo "info : branch ref : ${{ github.ref }}"
+      - run: echo "info : repository : ${{ github.repository }}"
+      - run: echo "info : status     : ${{ job.status }}"
+      - run: ls ${{ github.workspace }}
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm i
+      - run: npm run
+      - run: npm run build
+      - run: ls ${{ github.workspace }}
+      - name: Archive the standStat.cjs
+        uses: actions/upload-artifact@v3
+        with:
+          name: standStat.cjs
+          path: dist:standStat.cjs
+      - run: echo "info : status     : ${{ job.status }}"
