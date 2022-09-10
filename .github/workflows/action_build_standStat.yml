@@ -18,14 +18,13 @@ jobs:
           node-version: '16'
       - run: npm i
       - run: npm run
-      - run: npm run build
+      - run: npm run make_all
       - run: ls ${{ github.workspace }}
       - name: Archive the standStat.cjs
         uses: actions/upload-artifact@v3
         with:
           name: standStat.cjs
           path: dist/standStat.cjs
-      - run: npm run create_zip_example
       - name: Archive the example1.zip
         uses: actions/upload-artifact@v3
         with:
