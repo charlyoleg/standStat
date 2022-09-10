@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import express from 'express';
 
 // cli
-const argv = yargs(hideBin(process.argv))
+const argv = await yargs(hideBin(process.argv))
   //.scriptName("standStat")
   .version('0.2.0')
   .usage("Usage: $0 --port <port> --directoy <directory-path>")
@@ -28,16 +28,14 @@ const argv = yargs(hideBin(process.argv))
   .strict()
   .parse();
 
-const argv2:any = argv; // workaround for typescript error
-
 
 // sanity checks
-if (argv2.directory === '') {
+if (argv.directory === '') {
   console.error(`ERR334: Error, you must specify a not empty directory-path!`);
   process.exit(-1);
 }
-if (! fs.existsSync(argv2.directory)) {
-  console.error(`ERR339: Error, the path ${argv2.directory} doesn't exist!`);
+if (! fs.existsSync(argv.directory)) {
+  console.error(`ERR339: Error, the path ${argv.directory} doesn't exist!`);
   process.exit(-1);
 }
 
@@ -49,8 +47,8 @@ app.use("/", (req, res, next) => {
   next();
 });
 // static content
-app.use(express.static(argv2.directory));
-app.listen(argv2.port, () => {
-  console.log(`Serving on port ${argv2.port} the content of the directory ${argv2.directory} ...`);
+app.use(express.static(argv.directory));
+app.listen(argv.port, () => {
+  console.log(`Serving on port ${argv.port} the content of the directory ${argv.directory} ...`);
 });
 
