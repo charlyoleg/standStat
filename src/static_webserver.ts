@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import express from 'express';
 
 // cli
-const argv = await yargs(hideBin(process.argv))
+const argv = yargs(hideBin(process.argv))
   //.scriptName("standStat")
   .version('0.2.0')
   .usage("Usage: $0 --port <port> --directoy <directory-path>")
@@ -26,7 +26,7 @@ const argv = await yargs(hideBin(process.argv))
     default: ''
     })
   .strict()
-  .parse();
+  .parseSync();
 
 
 // sanity checks
