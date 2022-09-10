@@ -5,12 +5,13 @@
   "type": "module",
   "main": "static_webserver.js",
   "scripts": {
-    "dev": "node ./static_webserver.js --port 2022 --directory tests/public",
+    "dev": "node build/static_webserver.js --port 2022 --directory tests/public",
     "test": "sh ./tests/test_standStat.sh",
     "build": "tsc --project src",
     "bundle": "esbuild build/static_webserver.js --bundle --platform=node --outfile=dist/standStat.cjs",
     "run_dist": "node dist/standStat.cjs --port 2022 --directory tests/public",
     "create_zip_example": "./create_zip_example.sh",
+    "make_all": "run-s build bundle create_zip_example",
     "clean": "rimraf build dist tests/tmp tmp"
   },
   "repository": {
