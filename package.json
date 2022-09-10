@@ -7,10 +7,11 @@
   "scripts": {
     "dev": "node ./static_webserver.js --port 2022 --directory tests/public",
     "test": "sh ./tests/test_standStat.sh",
-    "build": "esbuild static_webserver.js --bundle --platform=node --outfile=dist/standStat.cjs",
+    "build": "tsc --project src",
+    "bundle": "esbuild build/static_webserver.js --bundle --platform=node --outfile=dist/standStat.cjs",
     "run_dist": "node dist/standStat.cjs --port 2022 --directory tests/public",
     "create_zip_example": "./create_zip_example.sh",
-    "clean": "rm -fr dist tests/tmp tmp"
+    "clean": "rimraf dist tests/tmp tmp"
   },
   "repository": {
     "type": "git",
@@ -27,8 +28,14 @@
   },
   "homepage": "https://github.com/charlyoleg/standStat#readme",
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.7.16",
+    "@types/yargs": "^17.0.12",
     "esbuild": "^0.15.7",
     "express": "^4.18.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.3",
     "yargs": "^17.5.1"
   }
 }
