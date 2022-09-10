@@ -11,7 +11,7 @@
     "bundle": "esbuild build/static_webserver.js --bundle --platform=node --outfile=dist/standStat.cjs",
     "run_dist": "node dist/standStat.cjs --port 2022 --directory tests/public",
     "create_zip_example": "./create_zip_example.sh",
-    "clean": "rimraf dist tests/tmp tmp"
+    "clean": "rimraf build dist tests/tmp tmp"
   },
   "repository": {
     "type": "git",

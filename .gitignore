@@ -1,5 +1,6 @@
 # .gitignore of standStat
-node_modules
-dist
+node_modules/
+build/
+dist/
 tests/tmp/
 tmp/
