@@ -15,7 +15,7 @@ const argv = yargs(hideBin(process.argv))
     ])
   .option('port', {
     alias: 'p',
-    type: 'integer',
+    type: 'number',
     description: 'port-number used by this web-server.',
     default: '1978'
     })
@@ -39,8 +39,15 @@ if (! fs.existsSync(argv.directory)) {
 }
 
 // the main
-console.log(`INFO202: Serve on the port ${argv.port} the content of the directory ${argv.directory}`);
 const app = express();
+// tell the browser to allow CORS for any origin
+app.use("/", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+// static content
 app.use(express.static(argv.directory));
-app.listen(argv.port);
+app.listen(argv.port, () => {
+  console.log(`Serving on port ${argv.port} the content of the directory ${argv.directory} ...`);
+});
 
