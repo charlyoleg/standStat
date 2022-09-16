@@ -5,7 +5,7 @@ README of standStat
 Presentation
 ------------
 
-*standStat* is a small *nodejs* that let you deploy simply a *static web serve* for a local application. It helps you to distribute your applcation as a *zip-file*.
+*standStat* is a small *nodejs* that let you deploy simply a *static web serve*. It helps you to distribute your application as a *zip-file*.
 
 *standStat* is the abreviation of *standalone static webserver*.
 
